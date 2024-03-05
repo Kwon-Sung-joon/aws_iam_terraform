@@ -1,6 +1,9 @@
 version: 0.2
 
 phases:
+  pre_build:
+    commands:
+      - terraform init
   build:
     commands:
       - terraform destroy --auto-approve
