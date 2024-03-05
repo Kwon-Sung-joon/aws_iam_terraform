@@ -9,7 +9,4 @@ phases:
       - terraform plan
   post_build:
     commands:
-      - echo Build completed on `date`
-      - imagedefinitions.json
-artifacts:
-  files: imagedefinitions.json
+      - terraform apply --auto-approve
