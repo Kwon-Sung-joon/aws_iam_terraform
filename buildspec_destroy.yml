@@ -3,4 +3,4 @@ version: 0.2
 phases:
   build:
     commands:
-      - terraform destory --auto-approve
+      - terraform destroy --auto-approve
