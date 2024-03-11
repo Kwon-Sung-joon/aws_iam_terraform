@@ -33,7 +33,8 @@
       "Sid": "AllowUserToDeactivateTheirOwnMFAOnlyWhenUsingMFA",
       "Effect": "Allow",
       "Action": [
-        "iam:DeactivateMFADevice"
+        "iam:DeactivateMFADevice",
+        "iam:ChangePassword"
       ],
       "Resource": [
         "arn:aws:iam::*:user/${aws:username}"
@@ -53,7 +54,8 @@
         "iam:ListMFADevices",
         "iam:ListUsers",
         "iam:ListVirtualMFADevices",
-        "iam:ResyncMFADevice"
+        "iam:ResyncMFADevice",
+        "iam:ChangePassword"
       ],
       "Resource": "*",
       "Condition": {
@@ -61,6 +63,16 @@
           "aws:MultiFactorAuthPresent": "false"
         }
       }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:GetAccountPasswordPolicy",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:ChangePassword",
+      "Resource": "arn:aws:iam::*:user/${aws:username}"
     }
   ]
 }

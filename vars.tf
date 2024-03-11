@@ -10,6 +10,11 @@ variable "iam_groups" {
       group_path = "/"
       mgd_policy = ["arn:aws:iam::aws:policy/AdministratorAccess"]
     }
+    DBA_Team = {
+      group_name = "dba"
+      group_path = "/"
+      mgd_policy = ["arn:aws:iam::aws:policy/job-function/DatabaseAdministrator"]
+    }
   }
 }
 variable "iam_users" {
@@ -17,16 +22,33 @@ variable "iam_users" {
     user_name  = string
     group_name = set(string)
   }))
-
   default = {
-    TS9999 = {
-      user_name  = "TS9999"
+    TS0989 = {
+      #hj nam
+      user_name  = "TS0989"
       group_name = ["infra_team"]
     }
-    TS9991 = {
-      user_name  = "TS9991"
+    TS0991 = {
+      #os kwon
+      user_name  = "TS0991"
       group_name = ["infra_team"]
     }
+    TS1147 = {
+      #ji shin
+      user_name  = "TS1147"
+      group_name = ["infra_team"]
+    }
+    TS1198 = {
+      #gh kwon
+      user_name  = "TS1198"
+      group_name = ["infra_team"]
+    }
+    TS1405 = {
+      #ys kim
+      user_name  = "TS1405"
+      group_name = ["infra_team"]
+    }
+
   }
 }
 variable "iam_policy" {
@@ -40,25 +62,17 @@ variable "iam_policy" {
     policy_attach_groups = set(string)
   }))
   default = {
-    Infra_Team = {
+    MFA_POLICY = {
       policy_name = "mfa_policy"
       policy_path = "/"
       policy_desc = "force mfa policy"
       policy = "template/mfa_policy.json"
       policy_attach_roles = []
       policy_attach_users = []
-      policy_attach_groups = ["infra_team"]
+      policy_attach_groups = ["infra_team","dba"]
     }
   }
 }
-
-
-
-
-
-
-
-
 
 
 variable "iam_groups_air" {
@@ -90,27 +104,27 @@ variable "iam_users_air" {
   }
 }
 variable "iam_policy_air" {
-      type = map(object({
-      policy_name = string
-      policy_path = string
-      policy_desc = string
-      policy = any
-      policy_attach_roles = set(string)
-      policy_attach_users = set(string)
-      policy_attach_groups = set(string)
-      }))
-    default = {
-      Infra_Team = {
-        policy_name = "mfa_policy"
-        policy_path = "/"
-        policy_desc = "force mfa policy"
-        policy = "template/mfa_policy.json"
-        policy_attach_roles = []
-        policy_attach_users = []
-        policy_attach_groups = ["test"]
-      }
+  type = map(object({
+    policy_name = string
+    policy_path = string
+    policy_desc = string
+    policy = any
+    policy_attach_roles = set(string)
+    policy_attach_users = set(string)
+    policy_attach_groups = set(string)
+  }))
+  default = {
+    Infra_Team = {
+      policy_name = "mfa_policy"
+      policy_path = "/"
+      policy_desc = "force mfa policy"
+      policy = "template/mfa_policy.json"
+      policy_attach_roles = []
+      policy_attach_users = []
+      policy_attach_groups = ["test"]
     }
   }
+}
 variable "iam_groups_hot" {
   type = map(object({
     group_name = string
