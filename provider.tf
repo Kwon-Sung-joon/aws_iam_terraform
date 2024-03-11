@@ -6,8 +6,8 @@ terraform {
     }
   }
   backend "s3" {
-    bucket  = "ksj-tf-state"
-    key     = "KSJ_TERRAFORM_IAM/terraform.tfstate"
+    bucket  = "ts-infra-team-tfstate"
+    key     = "ts1439/terraform.tfstate"
     region  = "ap-northeast-2"
     encrypt = true
   }

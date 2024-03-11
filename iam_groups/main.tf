@@ -9,3 +9,5 @@ resource "aws_iam_group_policy_attachment" "iam_group_policy" {
   policy_arn = each.value
   depends_on = [aws_iam_group.iam_groups ,]
 }
+
+
