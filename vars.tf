@@ -46,7 +46,7 @@ variable "iam_users" {
     TS1405 = {
       #ys kim
       user_name  = "TS1405"
-      group_name = ["infra_team"]
+      group_name = ["dba"]
     }
 
   }
@@ -70,6 +70,15 @@ variable "iam_policy" {
       policy_attach_roles = []
       policy_attach_users = []
       policy_attach_groups = ["infra_team","dba"]
+    },
+    DBA_POLICY = {
+      policy_name = "dba_policy"
+      policy_path = "/"
+      policy_desc = "dba policy"
+      policy = "template/dba_policy.json"
+      policy_attach_roles = []
+      policy_attach_users = []
+      policy_attach_groups = ["dba"]
     }
   }
 }
