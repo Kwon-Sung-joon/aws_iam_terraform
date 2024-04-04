@@ -1,9 +1,12 @@
 
 # Terraform IAM 관리
 
-- 사용 IDE : InteliJ
-- 소스 관리 : github
-- CodeBuild
+
+- Tools 
+  - IDE : InteliJ
+  - 소스 관리 : github
+  - CodeBuild
+  - tf version : 1.7.2
 
 ## Terraform 모듈 구성
 
