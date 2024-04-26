@@ -23,30 +23,9 @@ variable "iam_users" {
     group_name = set(string)
   }))
   default = {
-    TS0989 = {
-      #hj nam
-      user_name  = "TS0989"
+    USER1 = {
+      user_name  = "USER1"
       group_name = ["infra_team"]
-    }
-    TS0991 = {
-      #os kwon
-      user_name  = "TS0991"
-      group_name = ["infra_team"]
-    }
-    TS1147 = {
-      #ji shin
-      user_name  = "TS1147"
-      group_name = ["infra_team"]
-    }
-    TS1198 = {
-      #gh kwon
-      user_name  = "TS1198"
-      group_name = ["infra_team"]
-    }
-    TS1405 = {
-      #ys kim
-      user_name  = "TS1405"
-      group_name = ["dba"]
     }
 
   }
