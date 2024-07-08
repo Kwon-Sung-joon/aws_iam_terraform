@@ -5,8 +5,4 @@ phases:
       - terraform init
   post_build:
     commands:
-      - terraform apply -target module.iam_policy_for_role_air --auto-approve
-      - terraform apply -target module.iam_policy_for_role_hot --auto-approve
-      - terraform apply -target module.iam_policy_for_role_kong --auto-approve
-      - terraform apply -target module.iam_policy_for_role_tna --auto-approve
       - terraform apply --auto-approve
