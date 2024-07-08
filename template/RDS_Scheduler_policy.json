@@ -1,0 +1,21 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "rds:StopDBInstance",
+        "rds:StartDBInstance"
+      ],
+      "Resource": "arn:aws:rds:ap-northeast-2:300846112004:db:stg-apigw"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "rds:Desc*",
+        "rds:List*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

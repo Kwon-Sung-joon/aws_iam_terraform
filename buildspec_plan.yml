@@ -1,0 +1,12 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - terraform init
+  build:
+    commands:
+      - terraform plan -target module.iam_policy_for_role_air
+      - terraform plan -target module.iam_policy_for_role_hot
+      - terraform plan -target module.iam_policy_for_role_kong
+      - terraform plan -target module.iam_policy_for_role_tna
+      - terraform plan
