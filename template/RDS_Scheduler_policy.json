@@ -7,7 +7,7 @@
         "rds:StopDBInstance",
         "rds:StartDBInstance"
       ],
-      "Resource": "arn:aws:rds:ap-northeast-2:300846112004:db:stg-apigw"
+      "Resource": "arn:aws:rds:ap-northeast-2:<ACCOUNT-A>:db:stg-apigw"
     },
     {
       "Effect": "Allow",
