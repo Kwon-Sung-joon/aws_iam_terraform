@@ -6,7 +6,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket  = "tidesquare-infra-terraform"
+    bucket  = "infra-terraform"
     key     = "terraform.tfstate"
     region  = "ap-northeast-2"
     encrypt = true
@@ -17,7 +17,7 @@ provider "aws" {
   region = "ap-northeast-2"
   assume_role {
     role_arn     = "arn:aws:iam::<ACCOUNT-A>:role/IAM_ROLE_FOR_ASSUME_ROLE"
-    session_name = "hompage"
+    session_name = "ACCOUNT-A"
   }
 }
 #air
@@ -26,6 +26,6 @@ provider "aws" {
   alias = "air"
   assume_role {
     role_arn     = "arn:aws:iam::<ACCOUNT-B>:role/IAM_ROLE_FOR_ASSUME_ROLE"
-    session_name = "air"
+    session_name = "ACCOUNT-B"
   }
 }
